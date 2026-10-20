@@ -1,0 +1,13 @@
+target/
+.git/
+.gitignore
+.idea/
+.vscode/
+*.iml
+*.log
+*.md
+Dockerfile
+.dockerignore
+.mvn/wrapper/maven-wrapper.jar
+evidencias/
+run_taller.*
