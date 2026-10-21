@@ -1,0 +1,33 @@
+[2026-10-21 12:54:24] $ docker logs --timestamps eco_air_active | grep 'Started EcoAirApplication'
+2026-10-21T17:53:57.291513337Z Picked up JAVA_TOOL_OPTIONS: -XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0 -XX:InitialRAMPercentage=50.0 -XX:+UseSerialGC -XX:+ExitOnOutOfMemoryError
+2026-10-21T17:54:05.248650504Z 2026-10-21T17:54:05.248Z  INFO 1 --- [eco-air-backend] [           main] com.ecoair.EcoAirApplication             : Started EcoAirApplication in 7.298 seconds (process running for 7.957)
+(exit code: 0)
+
+[2026-10-21 12:54:24] $ docker stats --no-stream eco_air_active
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT   MEM %     NET I/O         BLOCK I/O       PIDS
+2a9fc87368d2   eco_air_active   0.12%     83.25MiB / 96MiB    86.72%    6.54kB / 126B   255MB / 349MB   31
+(exit code: 0)
+
+[2026-10-21 12:54:31] $ docker stats --no-stream eco_air_active
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT   MEM %     NET I/O         BLOCK I/O       PIDS
+2a9fc87368d2   eco_air_active   0.29%     83.76MiB / 96MiB    87.25%    6.78kB / 126B   256MB / 349MB   31
+(exit code: 0)
+
+[2026-10-21 12:54:32] $ docker exec eco_air_active env | grep OPERATOR_ID
+OPERATOR_ID=890275
+(exit code: 0)
+
+[2026-10-21 12:54:32] $ docker inspect --format='{{.Id}}' eco-air-backend:1.0.0
+sha256:568e9b8ed17b3220e091a657f8347c59af87992c3f1538e49811a90b0b94fbf2
+(exit code: 0)
+
+[2026-10-21 12:54:32] $ docker ps -a --filter name=eco_air
+CONTAINER ID   IMAGE                   COMMAND                  CREATED          STATUS                        PORTS                                         NAMES
+2a9fc87368d2   eco-air-backend:1.0.0   "java -jar /app/app.…"   36 seconds ago   Up 35 seconds                 0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp   eco_air_active
+d3e3112b9e8d   eco-air-backend:1.0.0   "java -jar /app/app.…"   47 seconds ago   Exited (137) 41 seconds ago                                                 eco_air_crash
+(exit code: 0)
+
+[2026-10-21 12:54:32] $ date
+mié 21 oct 2026 12:54:32 -05
+(exit code: 0)
+

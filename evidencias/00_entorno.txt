@@ -1,0 +1,12 @@
+[2026-10-21 12:43:05] $ date
+mié 21 oct 2026 12:43:05 -05
+(exit code: 0)
+
+[2026-10-21 12:43:05] $ docker --version
+Docker version 29.6.2, build 1.fc43
+(exit code: 0)
+
+[2026-10-21 12:43:05] $ docker info --format 'Server: {{.ServerVersion}} | OS: {{.OperatingSystem}} | Kernel: {{.KernelVersion}} | CPUs: {{.NCPU}} | RAM: {{.MemTotal}} | Cgroup: {{.CgroupVersion}}'
+Server: 29.6.2 | OS: Fedora Linux 43 (KDE Plasma Desktop Edition) | Kernel: 7.1.12-100.fc43.x86_64 | CPUs: 12 | RAM: 33310220288 | Cgroup: 2
+(exit code: 0)
+

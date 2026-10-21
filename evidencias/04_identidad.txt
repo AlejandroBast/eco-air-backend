@@ -1,0 +1,12 @@
+[2026-10-21 12:53:45] $ docker inspect --format='{{.Id}}' eco-air-backend:1.0.0
+sha256:568e9b8ed17b3220e091a657f8347c59af87992c3f1538e49811a90b0b94fbf2
+(exit code: 0)
+
+[2026-10-21 12:53:45] $ docker exec eco_air_active env | grep OPERATOR_ID
+OPERATOR_ID=890275
+(exit code: 0)
+
+[2026-10-21 12:53:45] $ docker inspect --format='{{.Id}}' eco_air_active
+48f0844f3350d248d53da35c793865c5f27bda47361dcd4e4dc36e72bcd9cdd0
+(exit code: 0)
+

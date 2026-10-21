@@ -1,0 +1,40 @@
+==================== RETO 3.2b - Calibracion fina (64m-88m) ====================
+[2026-10-21 14:39:10] $ docker run -d --name eco_air_active -p 8080:8080 -m 64m eco-air-backend:1.0.0
+d3b2c0481798cb1e927987ea6dfd817980bd1bce5038a519b9c29a921c9348ed
+RESULTADO: 64m | arranque=-1 s | Status=exited ExitCode=137 OOMKilled=true
+2026-10-21T19:39:18.049Z  INFO 1 --- [eco-air-backend] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-10-21T19:39:20.209Z  INFO 1 --- [eco-air-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-21T19:39:20.394Z  INFO 1 --- [eco-air-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+
+[2026-10-21 14:39:21] $ docker run -d --name eco_air_active -p 8080:8080 -m 72m eco-air-backend:1.0.0
+3b8228fdc001a1ff459e27028343b70fbe04c7d4413c2694c9ef73dc0a6adb89
+RESULTADO: 72m | arranque=-1 s | Status=exited ExitCode=137 OOMKilled=true
+2026-10-21T19:39:30.035Z  INFO 1 --- [eco-air-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-21T19:39:30.459Z  INFO 1 --- [eco-air-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:ecoair user=SA
+2026-10-21T19:39:30.465Z  INFO 1 --- [eco-air-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+
+[2026-10-21 14:39:32] $ docker run -d --name eco_air_active -p 8080:8080 -m 80m eco-air-backend:1.0.0
+cf9b2dfe7cf2b3c78fc48723b7712bc717a67182452f1351b9e6face49f9540c
+RESULTADO: 80m | arranque=-1 s | Status=exited ExitCode=137 OOMKilled=true
+	... 44 common frames omitted
+
+2026-10-21T19:39:42.842Z  INFO 1 --- [eco-air-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+
+[2026-10-21 14:39:44] $ docker run -d --name eco_air_active -p 8080:8080 -m 88m eco-air-backend:1.0.0
+59f81b9ab25568e1204ebc530899aab564db3c46ecdeebcd0d4448030ec60c6a
+RESULTADO: 88m | arranque=11.281 s | Status=exited ExitCode=137 OOMKilled=true
+2026-10-21T19:39:54.490Z  INFO 1 --- [eco-air-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-21T19:39:57.337Z  INFO 1 --- [eco-air-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-10-21T19:39:57.392Z  INFO 1 --- [eco-air-backend] [           main] com.ecoair.EcoAirApplication             : Started EcoAirApplication in 11.281 seconds (process running for 12.636)
+
+[2026-10-21 14:40:05] $ docker run -d --name eco_air_active -p 8080:8080 -m 96m eco-air-backend:1.0.0
+4c60da47abe2d34e27d0104f89da29a2ef76ce1d05afe25cdf60fca2ccfc6073
+2026-10-21T19:40:06.335374870Z Picked up JAVA_TOOL_OPTIONS: -XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0 -XX:InitialRAMPercentage=50.0 -XX:+UseSerialGC -XX:+ExitOnOutOfMemoryError
+2026-10-21T19:40:15.219672309Z 2026-10-21T19:40:15.219Z  INFO 1 --- [eco-air-backend] [           main] com.ecoair.EcoAirApplication             : Started EcoAirApplication in 8.085 seconds (process running for 8.883)
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT   MEM %     NET I/O         BLOCK I/O       PIDS
+4c60da47abe2   eco_air_active   0.15%     82.89MiB / 96MiB    86.35%    5.95kB / 126B   220MB / 311MB   31
+CONTAINER ID   IMAGE                   COMMAND                  CREATED          STATUS                     PORTS                                         NAMES
+4c60da47abe2   eco-air-backend:1.0.0   "java -jar /app/app.…"   22 seconds ago   Up 21 seconds              0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp   eco_air_active
+d3e3112b9e8d   eco-air-backend:1.0.0   "java -jar /app/app.…"   2 hours ago      Exited (137) 2 hours ago                                                 eco_air_crash
+UMBRAL_MINIMO_FINAL=96m
+mié 21 oct 2026 14:40:27 -05

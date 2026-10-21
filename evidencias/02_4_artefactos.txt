@@ -1,0 +1,13 @@
+[2026-10-21 12:53:44] $ docker exec eco_air_active which mvn
+(exit code: 1)
+
+[2026-10-21 12:53:45] $ docker exec eco_air_active find / -name '*.java' 2>/dev/null
+(exit code: 1)
+
+[2026-10-21 12:53:45] $ docker exec eco_air_active ls -la /app
+total 47800
+drwxr-xr-x 1 sensor_user sensorgroup       14 Oct 21 17:53 .
+drwxr-xr-x 1 root        root               6 Oct 21 17:53 ..
+-rw-r--r-- 1 sensor_user sensorgroup 48944322 Oct 21 17:53 app.jar
+(exit code: 0)
+

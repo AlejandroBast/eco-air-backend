@@ -1,0 +1,9 @@
+[2026-10-21 12:53:44] $ docker exec eco_air_active touch /etc/crontab_fake
+touch: cannot touch '/etc/crontab_fake': Permission denied
+(exit code: 1)
+
+[2026-10-21 12:53:44] $ docker exec eco_air_active ls -ld /etc /app
+drwxr-xr-x 1 sensor_user sensorgroup 14 Oct 21 17:53 /app
+drwxr-xr-x 1 root        root        56 Oct 21 17:53 /etc
+(exit code: 0)
+

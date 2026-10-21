@@ -1,0 +1,2 @@
+96m | arranque=7.298 s | Status=running ExitCode=0 OOMKilled=false
+UMBRAL_MINIMO=96m

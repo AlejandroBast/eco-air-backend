@@ -1,0 +1,15 @@
+[2026-10-21 12:53:56] $ docker run -d --name eco_air_active -p 8080:8080 -m 96m eco-air-backend:1.0.0
+2a9fc87368d260b84c3f6e9bcd9b7d055d032d9a6d7294498cbbb85dd8aeb013
+(exit code: 0)
+
+RESULTADO: 96m | arranque=7.298 s | Status=running ExitCode=0 OOMKilled=false
+[2026-10-21 12:54:13] $ docker logs --timestamps eco_air_active | grep 'Started EcoAirApplication'
+2026-10-21T17:53:57.291513337Z Picked up JAVA_TOOL_OPTIONS: -XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0 -XX:InitialRAMPercentage=50.0 -XX:+UseSerialGC -XX:+ExitOnOutOfMemoryError
+2026-10-21T17:54:05.248650504Z 2026-10-21T17:54:05.248Z  INFO 1 --- [eco-air-backend] [           main] com.ecoair.EcoAirApplication             : Started EcoAirApplication in 7.298 seconds (process running for 7.957)
+(exit code: 0)
+
+[2026-10-21 12:54:13] $ docker stats --no-stream eco_air_active
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT   MEM %     NET I/O         BLOCK I/O       PIDS
+2a9fc87368d2   eco_air_active   0.10%     83.34MiB / 96MiB    86.81%    6.54kB / 126B   255MB / 349MB   31
+(exit code: 0)
+
